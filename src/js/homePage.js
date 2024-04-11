@@ -116,16 +116,17 @@ export default {
   }
    
   },
-  newDetail(post){
-    // console.log(post.post_id);
-    this.$router.push({
-      name : "newDetails",
-      // path : `newDetails`,
-      params : {
-        id  : post.post_id
-      } 
-    })
+  newDetails(id){
+    // console.log(id);
 
+    this.$router.push({
+      name: 'newsDetails',
+      query: {
+        newsId: id
+      }
+    });
+    
+       
   }
   
   },

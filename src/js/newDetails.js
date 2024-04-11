@@ -41,11 +41,13 @@ export default {
       }
     },
     mounted() {
-      console.log(this.$route.params.id);
-      this.postId =     this.$route.params.id; 
+      // console.log(this.$route.query.newsId);
+      this.postId =this.$route.query.newsId; 
       this.loadPost (this.postId);
-
-
+      // console.log(this.postId);
+  
     
     },
+
+    
 };

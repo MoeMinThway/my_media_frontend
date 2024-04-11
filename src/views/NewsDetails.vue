@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="section-tittle mb-30 pt-30">
                                     <h3> Title : {{ post.title }} </h3>
-                                    <h3> Title : {{ this.$route.params.id }} </h3>
+                                    <h3> Param : {{ this.$route.params.id }} </h3>
                                 </div>
                                 <div class="about-prea">
                                     <p class="about-pera1 mb-25">Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
@@ -128,6 +128,5 @@
     </div>
 </template>
 
-<script src="../js/newDetails.js">
-</script>
+<script src="../js/newDetails.js"></script>
 

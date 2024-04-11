@@ -97,7 +97,8 @@
                           >
                             <!-- {{ post.title }} -->
 
-                            <div class="single-what-news mb-100"   @click="newDetail(post)">
+                            <div class="single-what-news mb-100"  
+                             @click="newDetails(post.post_id)">
                               <div class="what-img">
                                 <img :src="post.image" alt="" width="200px" />
                               </div>

@@ -7,10 +7,23 @@ export default {
       postLists: {},
       categoryLists: {},
       searchKey : '',
+      
 
     };
   },
   methods: {
+    home(){
+      this.$router.push({
+        name : 'home'
+      })
+    }
+    ,
+    login(){
+      this.$router.push({
+        name : 'login'
+      })
+    }
+    ,
     getAllPost() {
   
       axios
@@ -35,7 +48,7 @@ export default {
           }
 
           this.postLists = response.data.post;
-                    console.log(this.postLists);
+                    // console.log(this.postLists);
 
         
         });
@@ -64,7 +77,6 @@ export default {
 
           }else{
             response.data.searchData[i].image =  "http://localhost:8000/postImage/"+response.data.searchData[i].image ;
-
           }
 
         }
@@ -74,7 +86,47 @@ export default {
     
 
       })
+    },
+  categorySearch(category){
+    // alert("ok");
+    // alert(category);
+    // console.log(category.category_id);
+  if(category.category_id != null){
+    let id = {
+      'categoryId' : category.category_id
     }
+    axios.post('http://127.0.0.1:8000/api/searchCategory',id).then( (response )=>{
+      console.log(response.data.posts);
+      for ( let i = 0 ; i< response.data.posts.length ; i++){
+        // http://localhost:8000/postImage/
+
+        if(response.data.posts[i].image == null ){
+          response.data.posts[i].image =  "http://localhost:8000/defaultImage/default.jpg";
+
+        }else{
+          response.data.posts[i].image =  "http://localhost:8000/postImage/"+response.data.posts[i].image ;
+
+        }
+
+      }
+      this.postLists = response.data.posts;
+      // console.log(response.data.posts);
+
+    } )
+  }
+   
+  },
+  newDetail(post){
+    // console.log(post.post_id);
+    this.$router.push({
+      name : "newDetails",
+      // path : `newDetails`,
+      params : {
+        id  : post.post_id
+      } 
+    })
+
+  }
   
   },
   mounted() {

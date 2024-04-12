@@ -10,6 +10,7 @@ export default {
         password: "",
       },
       activeAccount :{},
+      userStatus : true
     };
   },
   computed: {
@@ -43,14 +44,16 @@ export default {
           if(this.activeAccount.token !=null){
             this.storeUserInfo(response);
            
-             
+              this.userStatus=true;
                this.home();
                 
           } else{
               //   this.$router.push({
               //     name: 'login'
               // })
-              alert("Something is wrong")
+              this.userStatus =false;
+              // alert("Something is wrong")
+              
        }
        });
 

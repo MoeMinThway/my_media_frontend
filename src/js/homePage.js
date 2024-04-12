@@ -157,5 +157,7 @@ export default {
     this.checkToken();
     this.getAllPost();
     this.loadCategory();
+    // console.log(this.storeToken);
+    // console.log(this.storeUserData);
   },
 };

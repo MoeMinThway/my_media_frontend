@@ -9,6 +9,9 @@
   <div class="container col-4 shadow offset-4 my-5 p-5" style="height: 400px;">
   
     <!-- <form > -->
+      <div  v-if="!this.userStatus" >
+                                      <h4 class="text-white bg-danger p-3 m-2">There is no user !!!</h4>
+         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input v-model="this.userData.email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">

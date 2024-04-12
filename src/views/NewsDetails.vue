@@ -14,15 +14,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="trending-tittle">
-                                <strong>Trending now</strong>
+                                <strong> 
+                                    <i class="fa-solid fa-eye"></i> {{ this.viewCount }}
+                                </strong>
                                 <!-- <p>Rem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
-                                <div class="trending-animated">
-                                    <ul id="js-news" class="js-hidden">
-                                        <li class="news-item">Bangladesh dolor sit amet, consectetur adipisicing elit.</li>
-                                        <li class="news-item">Spondon IT sit amet, consectetur.......</li>
-                                        <li class="news-item">Rem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-                                    </ul>
-                                </div>
+                               
                                 
                             </div>
                         </div>
@@ -36,13 +32,10 @@
                                 </div>
                                 <div class="section-tittle mb-30 pt-30">
                                     <h3> Title : {{ post.title }} </h3>
-                                    <h3> Param : {{ this.$route.params.id }} </h3>
                                 </div>
                                 <div class="about-prea">
-                                    <p class="about-pera1 mb-25">Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
-                                    <p class="about-pera1 mb-25">Moms are like…buttons? Moms are like glue. Moms are like pizza crusts. Moms are the ones who make sure things happen—from birth to school lunch.</p>
                                     <p class="about-pera1 mb-25">
-                                  Description        :   {{ post.description }}
+                                         Description        :   {{ post.description }}
                                         </p>
                                 </div> 
                     

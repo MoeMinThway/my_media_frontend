@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
@@ -25,7 +24,6 @@ const routes: Array<RouteRecordRaw> = [
     component: ()=> import('../views/LoginPage.vue')
   },
 
- 
 ]
 
 const router = createRouter({

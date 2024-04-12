@@ -15,10 +15,12 @@
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input type="password" v-model="this.userData.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input  @keyup.enter="userLogin()" type="password" v-model="this.userData.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
     
         <button  class="btn btn-primary" @click="userLogin()">Login</button>
+        <!-- <button  class="btn btn-primary" @click="checkToken()">Check Token  </button> -->
+
     <!-- </form> -->
 
   </div>

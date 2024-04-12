@@ -1,4 +1,4 @@
-# my_media_client
+# my_media_frontend
 
 ## Project setup
 ```

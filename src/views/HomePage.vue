@@ -1,8 +1,9 @@
 <template>
 
   <div class="d-flex justify-content-center py-3">
-    <p class=" btn btn-danger px-2 mx-3 " @click="home()">Home</p>
-    <p class=" btn btn-dark bg-dark px-2 mx-3 " @click="login()" >Login</p>
+    <!-- <p class=" btn btn-danger px-2 mx-3 " @click="home()">Home</p> -->
+    <p v-if="!tokenStatus " class=" btn btn-dark bg-dark px-2 mx-3 " @click="login()" >Login</p>
+    <p v-else class=" btn btn-dark bg-dark px-2 mx-3 " @click="logout()" >Logout</p>
   </div>
 
   <div>
@@ -82,39 +83,54 @@
                       aria-labelledby="nav-home-tab"
                     >
                       <div class="whats-news-caption">
-                        <div class="row">
-                       
-                          <div  v-if="postLists.length == 0" class="mx-auto ml-5" style="height: 350px; margin-top: 100px;">
-                            <h1 class="text-danger">There is no data here !!!</h1>
-                          </div>
-              
-                          <div
-                          v-else
-                            class="col-lg-6 col-md-6"
-                            v-for="(post, index) in postLists"
-                            :key="index"
-                          
-                          >
-                            <!-- {{ post.title }} -->
+                          <span v-if="this.tokenStatus == false">
+                            <div  class="mx-auto ml-5" style="height: 350px; margin-top: 100px;">
+                                      <h1 class="text-danger">You cannot access this page ! </h1>
+                                      <span>Please Login first
+                                        <p class=" btn btn-dark bg-dark px-2 mx-3 " @click="login()" >Login</p>
 
-                            <div class="single-what-news mb-100"  
-                             @click="newDetails(post.post_id)">
-                              <div class="what-img">
-                                <img :src="post.image" alt="" width="200px" />
-                              </div>
-                              <div class="what-cap">
-                                <span class="color1"> {{ post.title }}</span>
-                                <h4>
-                                  <a href="details.html"
-                                    >
-                                      {{post.description}}
-                                     </a
-                                  >
-                                </h4>
-                              </div>
+                                      </span>
+
+                                      
                             </div>
-                          </div>
-                        </div>
+                          </span>
+                          <span v-else>
+                            <div class="row">
+                       
+                                    <div  v-if="postLists.length == 0" class="mx-auto ml-5" style="height: 350px; margin-top: 100px;">
+                                      <h1 class="text-danger">There is no data here !!!</h1>
+                                    </div>
+                        
+                                    <div
+                                    v-else
+                                      class="col-lg-6 col-md-6"
+                                      v-for="(post, index) in postLists"
+                                      :key="index"
+                                      
+                                    
+                                    >
+                                      <!-- {{ post.title }} -->
+
+                                      <div class="single-what-news mb-100"  
+                                        @click="newDetails(post.post_id)">
+                                        <div class="what-img">
+                                          <img :src="post.image" alt="" width="200px" />
+                                        </div>
+                                        <div class="what-cap">
+                                          <span class="color1"> {{ post.title }}</span>
+                                          <h4>
+                                            <a href="details.html"
+                                              >
+                                                {{post.description}}
+                                                </a
+                                            >
+                                          </h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                          
+                          </span>
                       </div>
                     </div>
                   </div>
